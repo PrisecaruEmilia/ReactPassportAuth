@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 export class Navbar extends Component {
   render() {
     return (
       <div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="#">
+          <Link class="navbar-brand" to="/">
             Custom Shop
-          </a>
+          </Link>
           <button
             class="navbar-toggler"
             type="button"
@@ -22,27 +23,27 @@ export class Navbar extends Component {
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">
+                <Link class="nav-link" to="/">
                   Home <span class="sr-only">(current)</span>
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <Link class="nav-link" to="#">
                   Profile
-                </a>
+                </Link>
               </li>
             </ul>
             <span class="navbar-text">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <Link class="nav-link" to="/login">
                     Login
-                  </a>
+                  </Link>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <Link class="nav-link" to="/register">
                     Register
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </span>
