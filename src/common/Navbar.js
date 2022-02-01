@@ -2,7 +2,52 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 export class Navbar extends Component {
+  // state = {
+  //   logout: false,
+  // };
+
+  logout = () => {
+    localStorage.removeItem('token');
+    this.props.setUser(null);
+  };
+
   render() {
+    let buttons;
+    let profile;
+    if (localStorage.getItem('token')) {
+      buttons = (
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item">
+            <Link className="nav-link" to="/" onClick={this.logout}>
+              Logout
+            </Link>
+          </li>
+        </ul>
+      );
+      profile = (
+        <li className="nav-item">
+          <Link className="nav-link" to="/profile">
+            Profile
+          </Link>
+        </li>
+      );
+    } else {
+      buttons = (
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item">
+            <Link className="nav-link" to="/login">
+              Login
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/register">
+              Register
+            </Link>
+          </li>
+        </ul>
+      );
+    }
+
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -27,26 +72,9 @@ export class Navbar extends Component {
                   Home <span className="sr-only">(current)</span>
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/profile">
-                  Profile
-                </Link>
-              </li>
+              {profile}
             </ul>
-            <span className="navbar-text">
-              <ul className="navbar-nav mr-auto">
-                <li className="nav-item">
-                  <Link className="nav-link" to="/login">
-                    Login
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/register">
-                    Register
-                  </Link>
-                </li>
-              </ul>
-            </span>
+            <span className="navbar-text">{buttons}</span>
           </div>
         </nav>
       </div>
