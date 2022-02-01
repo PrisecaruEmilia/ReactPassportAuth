@@ -37,8 +37,20 @@ export class Header extends Component {
           <Navbar user={this.state.user} setUser={this.setUser} />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
+            <Route
+              exact
+              path="/login"
+              component={() => (
+                <Login user={this.state.user} setUser={this.setUser} />
+              )}
+            />
+            <Route
+              exact
+              path="/register"
+              component={() => (
+                <Register user={this.state.user} setUser={this.setUser} />
+              )}
+            />
             <Route exact path="/forget" component={ForgetPassword} />
             <Route
               exact
