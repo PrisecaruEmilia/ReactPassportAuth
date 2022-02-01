@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 export class Profile extends Component {
   render() {
@@ -12,11 +13,11 @@ export class Profile extends Component {
       created_at = this.props.user.created_at
         ? this.props.user.created_at.substring(0, 10)
         : '';
-      // const shorten = this.props.details
-      //   ? this.props.details.substring(0, 100)
-      //   : '';
     }
 
+    if (!localStorage.getItem('token')) {
+      return <Redirect to="/login" />;
+    }
     return (
       <div>
         <div className="container-fluid bootstrap-snippet header-container">

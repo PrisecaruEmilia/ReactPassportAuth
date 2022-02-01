@@ -37,21 +37,14 @@ export class Login extends Component {
     let errorMessage = '';
     if (this.state.message) {
       errorMessage = (
-        <div
-          className="alert alert-danger alert-dismissible fade show"
-          role="alert"
-        >
-          <strong>{this.state.message}</strong>
-          <button
-            type="button"
-            className="close"
-            data-dismiss="alert"
-            aria-label="Close"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
+        <div class="alert alert-danger" role="alert">
+          {this.state.message}
         </div>
       );
+    }
+
+    if (localStorage.getItem('token')) {
+      return <Redirect to="/profile" />;
     }
 
     // after login -> redirect to Profile
