@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export class Navbar extends Component {
   render() {
     return (
       <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <Link class="navbar-brand" to="/">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <Link className="navbar-brand" to="/">
             Custom Shop
           </Link>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-toggle="collapse"
             data-target="#navbarText"
@@ -18,30 +18,30 @@ export class Navbar extends Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <Link class="nav-link" to="/">
-                  Home <span class="sr-only">(current)</span>
+          <div className="collapse navbar-collapse" id="navbarText">
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item active">
+                <Link className="nav-link" to="/">
+                  Home <span className="sr-only">(current)</span>
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link" to="/profile">
+              <li className="nav-item">
+                <Link className="nav-link" to="/profile">
                   Profile
                 </Link>
               </li>
             </ul>
-            <span class="navbar-text">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                  <Link class="nav-link" to="/login">
+            <span className="navbar-text">
+              <ul className="navbar-nav mr-auto">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/login">
                     Login
                   </Link>
                 </li>
-                <li class="nav-item">
-                  <Link class="nav-link" to="/register">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/register">
                     Register
                   </Link>
                 </li>

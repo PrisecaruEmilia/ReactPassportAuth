@@ -9,15 +9,15 @@ export class ForgetPassword extends Component {
           <div className="jumbotron col-lg-4 offset-lg-4">
             <h3 className="text-center">Forget Password</h3>
             <form>
-              <div class="form-group">
-                <label for="emailForgetAccount">Email address</label>
+              <div className="form-group">
+                <label htmlFor="emailForgetAccount">Email address</label>
                 <input
                   type="email"
-                  class="form-control"
+                  className="form-control"
                   id="emailForgetAccount"
                 />
               </div>
-              <button type="submit" class="btn btn-primary btn-block">
+              <button type="submit" className="btn btn-primary btn-block">
                 Forgot Account
               </button>
               <p className="mt-3">

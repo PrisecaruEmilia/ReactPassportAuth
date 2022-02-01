@@ -9,20 +9,20 @@ export class Login extends Component {
           <div className="jumbotron col-lg-4 offset-lg-4">
             <h3 className="text-center">Login Acount</h3>
             <form>
-              <div class="form-group">
-                <label for="loginEmail">Email address</label>
-                <input type="email" class="form-control" id="loginEmail" />
+              <div className="form-group">
+                <label htmlFor="loginEmail">Email address</label>
+                <input type="email" className="form-control" id="loginEmail" />
               </div>
-              <div class="form-group">
-                <label for="loginPassword">Password</label>
+              <div className="form-group">
+                <label htmlFor="loginPassword">Password</label>
                 <input
                   type="password"
-                  class="form-control"
+                  className="form-control"
                   id="loginPassword"
                 />
               </div>
 
-              <button type="submit" class="btn btn-primary btn-block">
+              <button type="submit" className="btn btn-primary btn-block">
                 Login
               </button>
               <p className="mt-3">

@@ -9,32 +9,36 @@ export class Register extends Component {
           <div className="jumbotron col-lg-4 offset-lg-4">
             <h3 className="text-center">Register Acount</h3>
             <form>
-              <div class="form-group">
-                <label for="registerName">User Name</label>
-                <input type="text" class="form-control" id="registerName" />
+              <div className="form-group">
+                <label htmlFor="registerName">User Name</label>
+                <input type="text" className="form-control" id="registerName" />
               </div>
-              <div class="form-group">
-                <label for="registerEmail">Email address</label>
-                <input type="email" class="form-control" id="registerEmail" />
+              <div className="form-group">
+                <label htmlFor="registerEmail">Email address</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="registerEmail"
+                />
               </div>
-              <div class="form-group">
-                <label for="registerPassword">Password</label>
+              <div className="form-group">
+                <label htmlFor="registerPassword">Password</label>
                 <input
                   type="password"
-                  class="form-control"
+                  className="form-control"
                   id="registerPassword"
                 />
               </div>
-              <div class="form-group">
-                <label for="confirmPassword">Confirm Password</label>
+              <div className="form-group">
+                <label htmlFor="confirmPassword">Confirm Password</label>
                 <input
                   type="password"
-                  class="form-control"
+                  className="form-control"
                   id="confirmPassword"
                 />
               </div>
 
-              <button type="submit" class="btn btn-primary btn-block">
+              <button type="submit" className="btn btn-primary btn-block">
                 Register
               </button>
               <p className="mt-3">
