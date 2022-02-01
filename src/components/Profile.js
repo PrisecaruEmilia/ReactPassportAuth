@@ -2,6 +2,21 @@ import React, { Component } from 'react';
 
 export class Profile extends Component {
   render() {
+    let name;
+    let email;
+    let created_at;
+
+    if (this.props.user) {
+      name = this.props.user.name;
+      email = this.props.user.email;
+      created_at = this.props.user.created_at
+        ? this.props.user.created_at.substring(0, 10)
+        : '';
+      // const shorten = this.props.details
+      //   ? this.props.details.substring(0, 100)
+      //   : '';
+    }
+
     return (
       <div>
         <div className="container-fluid bootstrap-snippet header-container">
@@ -14,12 +29,12 @@ export class Profile extends Component {
                   className="d-block ui-w-100 rounded-circle"
                 />
                 <div className="media-body ml-5">
-                  <h4 className="font-weight-bold mb-4">John Doe</h4>
+                  <h4 className="font-weight-bold mb-4">{name}</h4>
                   <ul className="list-group">
-                    <li className="list-group-item">Name: John Doe</li>
-                    <li className="list-group-item">Email: john@example.com</li>
+                    <li className="list-group-item">Name: {name}</li>
+                    <li className="list-group-item">Email: {email}</li>
                     <li className="list-group-item">
-                      Account created at: Date
+                      Account created at: {created_at}
                     </li>
                   </ul>
                 </div>
