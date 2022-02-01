@@ -27,6 +27,7 @@ export class Register extends Component {
       .then((response) => {
         console.log(response);
         localStorage.setItem('token', response.data.token);
+        this.setState({ message: response.data.message });
         this.setState({
           loggedIn: true,
         });
@@ -34,11 +35,32 @@ export class Register extends Component {
       })
       .catch((error) => {
         console.log(error);
+        this.setState({ message: error.response.data.message });
       });
   };
 
   render() {
-    // after login -> redirect to Profile
+    let errorMessage = '';
+    if (this.state.message) {
+      errorMessage = (
+        <div
+          className="alert alert-danger alert-dismissible fade show"
+          role="alert"
+        >
+          <strong>{this.state.message}</strong>
+          <button
+            type="button"
+            className="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      );
+    }
+
+    // after register -> redirect to Profile
 
     if (this.state.loggedIn) {
       return <Redirect to="/profile" />;
@@ -50,6 +72,7 @@ export class Register extends Component {
           <div className="jumbotron col-lg-4 offset-lg-4">
             <h3 className="text-center">Register Acount</h3>
             <form onSubmit={this.formSubmit}>
+              {errorMessage}
               <div className="form-group">
                 <label htmlFor="registerName">User Name</label>
                 <input
