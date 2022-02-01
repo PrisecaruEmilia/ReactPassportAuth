@@ -7,6 +7,8 @@ import Login from '../components/Login';
 import Register from '../components/Register';
 import ForgetPassword from '../components/ForgetPassword';
 import Profile from '../components/Profile';
+import Reset from '../components/Reset';
+
 import axios from 'axios';
 
 export class Header extends Component {
@@ -52,6 +54,8 @@ export class Header extends Component {
               )}
             />
             <Route exact path="/forget" component={ForgetPassword} />
+            <Route exact path="/reset/:id" component={Reset} />
+
             <Route
               exact
               path="/profile"
